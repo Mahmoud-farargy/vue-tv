@@ -191,9 +191,11 @@ img {
   .banner--content{
     left:0;
     padding-left: 4vw;
-    // z-index: var(--banner-content);
     align-items: center;
     justify-content: center;
+    @media (max-width: 670px){
+      padding: 1rem 0.7rem 3rem !important;
+    }
     h1 span{
        color: #fff;
     }
