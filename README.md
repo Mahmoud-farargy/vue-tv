@@ -1,4 +1,4 @@
-# hmaserv-home-task
+# magic-stream-tv
 
 ## Project setup
 ```

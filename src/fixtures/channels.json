@@ -1,0 +1,15 @@
+[
+    {"title": "Bein Sport", "imgPath": "bein-sports"},
+    {"title": "ESPEN", "imgPath": "espn"},
+    {"title": "Fox movies", "imgPath": "fox"},
+    {"title": "ABC", "imgPath": "abc"},
+    {"title": "Netflix", "imgPath": "netflix"},
+    {"title": "NBA", "imgPath": "nba"},
+    {"title": "NBC", "imgPath": "nbc"},
+    {"title": "BBC", "imgPath": "bbc"},
+    {"title": "CNN", "imgPath": "cnn"},
+    {"title": "Nickelodeon", "imgPath": "nickelodeon"},
+    {"title": "MSNBC", "imgPath": "msnbc"},
+    {"title": "MTV", "imgPath": "mtv"},
+    {"title": "CBS", "imgPath": "cbs"}
+]

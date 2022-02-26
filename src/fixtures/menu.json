@@ -1,0 +1,6 @@
+{
+    "list": [
+        {"icon": "shape-outline", "title": "Categories", "path": "/" },
+        {"icon": "information-outline", "title": "About", "path": "/about" }
+    ]
+}
