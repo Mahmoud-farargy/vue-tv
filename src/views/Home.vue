@@ -1,20 +1,12 @@
 <template>
   <div id="home">
-    <div class="banner">
-      <div
-        class="banner--bg"
-        :style="{
-          'background-image': `url(${require('@/assets/hero-1920x1080.webp')})`,
-        }"
-      ></div>
-      <div class="banner--content flex-column">
+    <Banner bgImage="hero-1920x1080.webp">
         <h1>
           <span class="first__line">All your streaming services</span>
-          <br/>
+          <br />
           <span class="second__line">in one place</span>
         </h1>
-      </div>
-    </div>
+    </Banner>
     <div class="content">
       <!-- channels -->
       <div class="channels--container">
@@ -47,8 +39,10 @@
       <!-- Categories -->
       <div class="categories--container">
         <h4 class="section--title">Live categories</h4>
-        <p v-if="getData.hasError" class="text-danger">An error occurred while loading Categories. Please try again later.</p>
-        <ul else class="categories--list flex-row">
+        <p v-if="getData.hasError" class="text-danger">
+          An error occurred while loading Categories. Please try again later.
+        </p>
+        <ul v-else-if="getData?.categories?.length > 0" class="categories--list flex-row">
           <li
             v-for="(category, idx) in getData.categories"
             :key="category.category_id || idx"
@@ -57,6 +51,7 @@
             <CategoryItem :item="category" />
           </li>
         </ul>
+        <h4 v-else>No categories have been found.</h4>
       </div>
     </div>
   </div>
@@ -66,7 +61,9 @@
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { mapGetters } from "vuex";
 import CategoryItem from "@/components/CategoryItem/CategoryItem";
+import Banner from "@/components/Banner/Banner";
 import channels from "@/fixtures/channels.json";
+
 export default {
   name: "Home",
   data() {
@@ -100,6 +97,7 @@ export default {
     Pagination,
     Navigation,
     CategoryItem,
+    Banner
   },
   computed: {
     ...mapGetters("main", ["getData"]),
@@ -117,10 +115,10 @@ export default {
       }
     }
     .categories--container {
-      margin: 1.5rem 0;     
-      @media (max-width: 670px){
+      margin: 1.5rem 0;
+      @media (max-width: 670px) {
         padding: 0 0.4rem;
-        .section--title{
+        .section--title {
           margin-bottom: 1rem;
         }
       }
@@ -159,9 +157,9 @@ export default {
       }
     }
   }
-}   
-[data-theme='dark'] #mainViews #home .content .channel--item {
-      background: rgb(31, 30, 30);
-      border: 1px solid rgb(54, 53, 53);
+}
+[data-theme="dark"] #mainViews #home .content .channel--item {
+  background: rgb(31, 30, 30);
+  border: 1px solid rgb(54, 53, 53);
 }
 </style>

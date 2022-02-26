@@ -57,7 +57,8 @@ div#screens {
   margin-left: 0px;
   min-width: 150px;
   background-color: var(--ultra-white);
-  transition: background-color var(--trans-05) !important;
+  transition: var(--trans-05) !important;
+  transition-property: margin-left, background-color;
   .modal--backdrop {
     display: none;
     z-index: var(--z-backdrop);

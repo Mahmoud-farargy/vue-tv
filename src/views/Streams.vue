@@ -31,7 +31,7 @@
     </div>
     <div class="streams--list--container">
       <h2 class="page--title" v-if="categoryName">{{ categoryName }}</h2>
-      <ul :class="[chosenLayout, 'streams--list--inner']">
+      <ul v-if="streamsList?.length > 0" :class="[chosenLayout, 'streams--list--inner']">
         <li
           v-for="(stream, idx) in streamsList"
           :key="stream.stream_id || stream.name || idx"
@@ -40,6 +40,7 @@
           <StreamItem :stream="stream" :chosenLayout="chosenLayout" />
         </li>
       </ul>
+      <h4 v-else>No streams found.</h4>
     </div>
   </div>
 </template>
